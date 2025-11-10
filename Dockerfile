@@ -1,9 +1,11 @@
+# Use official n8n image
 FROM n8nio/n8n:latest
 
-ENV N8N_BASIC_AUTH_ACTIVE=true \
-    N8N_PORT=5678 \
-    N8N_PROTOCOL=https
+# Set working directory
+WORKDIR /home/node
 
+# Expose n8n default port
 EXPOSE 5678
 
-CMD ["n8n", "start"]
+# Start n8n
+ENTRYPOINT ["/bin/sh", "-c", "n8n start"]

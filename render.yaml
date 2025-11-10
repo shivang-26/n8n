@@ -3,26 +3,18 @@ services:
     name: n8n-buildwithshivang
     env: docker
     plan: free
-    autoDeploy: true
-
+    branch: main
+    dockerfilePath: ./Dockerfile
     envVars:
+      - key: N8N_PORT
+        value: 5678
+      - key: WEBHOOK_URL
+        value: https://n8n.buildwithshivang.site/
+      - key: 3yZ0xg1jAdcM5x+QZ4sT4bFjW9PQZf2A
+        generateValue: true
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: "shivang"
+        value: admin
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "Shivang2022##"
-      - key: N8N_PORT
-        value: "5678"
-      - key: N8N_PROTOCOL
-        value: "https"
-      - key: N8N_HOST
-        value: "n8n.buildwithshivang.site"
-      - key: WEBHOOK_URL
-        value: "https://n8n.buildwithshivang.site/"
-      - key: EXECUTIONS_PROCESS
-        value: "main"
-      - key: GENERIC_TIMEZONE
-        value: "Asia/Kolkata"
-
-    dockerfilePath: ./Dockerfile
+        value: Shivang2022##
